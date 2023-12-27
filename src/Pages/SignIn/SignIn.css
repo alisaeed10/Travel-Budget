@@ -25,6 +25,11 @@
     color: rgb(12, 12, 12);
     background-color: rgb(249, 250, 249);
 }
+.error-checking{
+    color: red;
+    font-size: 0.8rem;
+    display: none;
+}
 .signin-forgot-password-button{
     text-decoration: underline;
     font-size: 0.8rem;

@@ -25,6 +25,20 @@
     color: rgb(12, 12, 12);
     background-color: rgb(249, 250, 249);
 }
+.error-checking2{
+    color: red;
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 1rem;
+    display: none;
+}
+.error-name-checking{
+    color: red;
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 1rem;
+    display: none;
+}
 .create-account-inputs-name{
     display: flex;
     justify-content: space-between;
