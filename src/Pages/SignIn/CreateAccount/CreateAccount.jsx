@@ -4,43 +4,95 @@ import './CreateAccount.css';
 import { isvaildEmail, isvaildPassword } from '../../../utils/Validation';
 
 function isvalidName(name){ 
-    return /^[nulla-zA-Z]+$/.test(name);
+    
+    return /^[a-zA-Z]+$/.test(name) || name === '';
 }
 
 export function CreateAccount() {
 
+
+    // this will handle the creation of the account and will also handle any errors that may occur
     const handleAccount = () => {
-        const firstName = document.querySelector('.create-account-inputs-name').children[0].value;
-        const lastName = document.querySelector('.create-account-inputs-name').children[1].value;
-        const email = document.querySelector('.create-account-inputs').children[3].value;
-        const password = document.querySelector('.create-account-inputs').children[4].value;
-        const confirmPassword = document.querySelector('.create-account-inputs').children[5].value;
-        if(firstName.length === 0){
+        const firstName = document.querySelector('.create-account-inputs-name').children[0];
+        const lastName = document.querySelector('.create-account-inputs-name').children[1];
+        const email = document.querySelector('.create-account-inputs').children[3];
+        const password = document.querySelector('.create-account-inputs').children[4];
+        const confirmPassword = document.querySelector('.create-account-inputs').children[5];
+        if(firstName.value.length === 0){
             document.querySelector('.error-name-checking').style.display = 'block';
-            document.querySelector('.create-account-inputs-name').children[0].style.border = '2px solid red';
+            firstName.style.border = '2px solid red';
+            firstName.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                firstName.style.animation = '';
+            }, 600);
         }
-        if(!isvalidName(firstName) && !isvalidName(lastName)){
+        else if(!isvalidName(firstName.value) && !isvalidName(lastName.value)){
             document.querySelector('.error-name-checking').style.display = 'block';
-            document.querySelector('.create-account-inputs-name').children[0].style.border = '2px solid red';
-            document.querySelector('.create-account-inputs-name').children[1].style.border = '2px solid red';
+            firstName.style.border = '2px solid red';
+            lastName.style.border = '2px solid red';
+            firstName.style.animation = 'shake 0.5s';
+            lastName.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                firstName.style.animation = '';
+                lastName.style.animation = '';
+            }, 600);
+            lastName.value = '';
+            firstName.value = '';
         }
-        if(!isvalidName(firstName) && isvalidName(lastName)){
+        else if(!isvalidName(firstName.value) && (isvalidName(lastName.value))){
             document.querySelector('.error-name-checking').style.display = 'block';
-            document.querySelector('.create-account-inputs-name').children[0].style.border = '2px solid red';
-            document.querySelector('.create-account-inputs-name').children[1].style.border = '2px solid black';
+            firstName.style.border = '2px solid red';
+            firstName.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                firstName.style.animation = '';
+            }, 600);
+            lastName.style.border = '2px solid black';
+            firstName.value = '';
         }
-        if(!isvalidName(lastName) && isvalidName(firstName) ){
+        else if((!isvalidName(lastName.value)) && isvalidName(firstName.value) ){
             document.querySelector('.error-name-checking').style.display = 'block';
-            document.querySelector('.create-account-inputs-name').children[1].style.border = '2px solid red';
-            document.querySelector('.create-account-inputs-name').children[0].style.border = '2px solid black';
+            lastName.style.border = '2px solid red';
+            lastName.style.animation = 'shake 0.5s';
+            lastName.value = '';
+            setTimeout(() => {
+                lastName.style.animation = '';
+            }, 600);
+            firstName.style.border = '2px solid black';
         }
-        if(isvaildEmail(email) && (isvaildPassword(password) && password.length >= 8) && (password === confirmPassword) && firstName.length !== 0){
+        else if(!isvaildPassword(password.value) || password.value !== confirmPassword.value){
+            document.querySelector('.error-checking2').style.display = 'block';
+            password.style.border = '2px solid red';
+            confirmPassword.style.border = '2px solid red';
+            password.style.animation = 'shake 0.5s';
+            confirmPassword.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                password.style.animation = '';
+                confirmPassword.style.animation = '';
+            }, 600);
+            password.value = '';
+            confirmPassword.value = '';
+        }
+        else if(!isvaildEmail(email.value)){
+            document.querySelector('.error-checking2').style.display = 'block';
+            email.style.border = '2px solid red';
+            email.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                email.style.animation = '';
+            }, 600);
+            email.value = '';
+            firstName.style.border = '2px solid black';
+            lastName.style.border = '2px solid black';
+            password.style.border = '2px solid black';
+            confirmPassword.style.border = '2px solid black';
+        }
+        else{
             document.querySelector('.error-checking2').style.display = 'none';
             document.querySelector('.error-name-checking').style.display = 'none';
-            document.querySelector('.create-account-inputs-name').children[0].style.border = '2px solid black';
-            document.querySelector('.create-account-inputs').children[3].style.border = '2px solid black';
-            document.querySelector('.create-account-inputs').children[4].style.border = '2px solid black';
-            document.querySelector('.create-account-inputs').children[5].style.border = '2px solid black';
+            firstName.style.border = '2px solid black';
+            lastName.style.border = '2px solid black';
+            email.style.border = '2px solid black';
+            password.style.border = '2px solid black';
+            confirmPassword.style.border = '2px solid black';
         }
         
     }
