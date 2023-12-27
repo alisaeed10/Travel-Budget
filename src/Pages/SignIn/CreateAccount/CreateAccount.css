@@ -1,0 +1,62 @@
+.create-account-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    padding: 5% 5%;
+    border-radius: 2rem;
+}
+.create-account-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black; 
+    border-bottom: 2px solid black;
+}
+.create-account-inputs{
+    padding: 0.5rem 1rem;
+}
+.create-account-input{
+    width: 100%;
+    padding: 0.7rem 0.4%;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: rgb(12, 12, 12);
+    background-color: rgb(249, 250, 249);
+}
+.create-account-inputs-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.create-account-input-name{
+
+    padding: 0.7rem 0.4%;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: rgb(12, 12, 12);
+    background-color: rgb(249, 250, 249);
+}
+
+.create-account-button-button{
+    width: 100%;
+    border-radius: 10rem;
+    padding: 0.8rem 5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    background-color: rgb(16, 165, 58);
+    color: black;
+}
+.create-account-sign-in{
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.7rem;
+}
+.create-account-sign-in-title{
+    margin-right: 0.5rem;
+}
