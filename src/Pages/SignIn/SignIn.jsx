@@ -1,9 +1,10 @@
 import './signIn.css';
 import { Link } from 'react-router-dom';
 import { isValidEmail, isValidPassword } from '../../utils/Validation';
+import { GoogleOAuth } from '../../Components/GoogleOAuth';
+
 
 export function SignIn() {
-
     // this will handle the sign in of the account and will also handle any errors that may occur
     const handleSignIn = () => {
         const message = document.querySelector('.signIn-inputs').children[0];
@@ -40,6 +41,7 @@ export function SignIn() {
         }
         
     }
+    
     return (
         <div className='signIn'>
             <div className='signIn-container'>
@@ -56,7 +58,7 @@ export function SignIn() {
                 <button className='signIn-button-button' onClick={() => handleSignIn()}>Sign In</button>
             </div>
              <div className='signIn-google-OAuth'>
-                <button className='signIn-google-OAuth-button'>Sign In with Google <img className='googleLogo' src='../../../googleLogo.png'></img></button>
+                <GoogleOAuth  />
             </div>
             <div className='signIn-apple-OAuth'>
                 <button className='signIn-apple-OAuth-button'>Sign In with Apple <img className='appleLogo' src='../../../appleLogo.png'></img></button>
