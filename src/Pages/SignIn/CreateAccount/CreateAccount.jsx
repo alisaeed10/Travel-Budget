@@ -1,9 +1,9 @@
 
 import { Link } from 'react-router-dom';
 import './CreateAccount.css';
-import { isvaildEmail, isvaildPassword } from '../../../utils/Validation';
+import { isValidEmail, isValidPassword } from '../../../utils/Validation';
 
-function isvalidName(name){ 
+function isValidName(name){ 
     
     return /^[a-zA-Z]+$/.test(name) || name === '';
 }
@@ -26,7 +26,7 @@ export function CreateAccount() {
                 firstName.style.animation = '';
             }, 600);
         }
-        else if(!isvalidName(firstName.value) && !isvalidName(lastName.value)){
+        else if(!isValidName(firstName.value) && !isValidName(lastName.value)){
             document.querySelector('.error-name-checking').style.display = 'block';
             firstName.style.border = '2px solid red';
             lastName.style.border = '2px solid red';
@@ -39,7 +39,7 @@ export function CreateAccount() {
             lastName.value = '';
             firstName.value = '';
         }
-        else if(!isvalidName(firstName.value) && (isvalidName(lastName.value))){
+        else if(!isValidName(firstName.value) && (isValidName(lastName.value))){
             document.querySelector('.error-name-checking').style.display = 'block';
             firstName.style.border = '2px solid red';
             firstName.style.animation = 'shake 0.5s';
@@ -49,7 +49,7 @@ export function CreateAccount() {
             lastName.style.border = '2px solid black';
             firstName.value = '';
         }
-        else if((!isvalidName(lastName.value)) && isvalidName(firstName.value) ){
+        else if((!isValidName(lastName.value)) && isValidName(firstName.value) ){
             document.querySelector('.error-name-checking').style.display = 'block';
             lastName.style.border = '2px solid red';
             lastName.style.animation = 'shake 0.5s';
@@ -59,7 +59,7 @@ export function CreateAccount() {
             }, 600);
             firstName.style.border = '2px solid black';
         }
-        else if(!isvaildPassword(password.value) || password.value !== confirmPassword.value){
+        else if(!isValidPassword(password.value) || password.value !== confirmPassword.value){
             document.querySelector('.error-checking2').style.display = 'block';
             password.style.border = '2px solid red';
             confirmPassword.style.border = '2px solid red';
@@ -72,7 +72,7 @@ export function CreateAccount() {
             password.value = '';
             confirmPassword.value = '';
         }
-        else if(!isvaildEmail(email.value)){
+        else if(!isValidEmail(email.value)){
             document.querySelector('.error-checking2').style.display = 'block';
             email.style.border = '2px solid red';
             email.style.animation = 'shake 0.5s';
@@ -118,7 +118,7 @@ export function CreateAccount() {
             </div>
             <div className='create-account-sign-in'>
                 <p className='create-account-sign-in-title'>Already have an account?</p>
-                <Link to='/signin'>sign in</Link>
+                <Link to='/signIn'>sign in</Link>
             </div>
         </div>
     );

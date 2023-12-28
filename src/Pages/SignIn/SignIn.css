@@ -1,4 +1,4 @@
-.signin-container{
+.signIn-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,16 +7,16 @@
     padding: 5% 5%;
     border-radius: 2rem;
 }
-.signin-title{
+.signIn-title{
     font-size: 2.5rem;
     font-weight: 700;
     color: black; 
     border-bottom: 2px solid black;
 }
-.signin-inputs{
+.signIn-inputs{
     padding: 0.5rem 1rem;
 }
-.signin-input{
+.signIn-input{
     width: 100%;
     padding: 0.7rem 0.4rem;
     margin-top: 1rem;
@@ -30,19 +30,19 @@
     font-size: 0.8rem;
     display: none;
 }
-.signin-forgot-password-button{
+.signIn-forgot-password-button{
     text-decoration: underline;
     font-size: 0.8rem;
     position: relative;
     right: 75%;
     bottom: 0.7rem;
 }
-.signin-button{
+.signIn-button{
     width: 100%;
     padding-bottom: 2rem;
     
 }
-.signin-button-button{
+.signIn-button-button{
     width: 80%;
     border-radius: 10rem;
     padding: 0.8rem 5rem;
@@ -52,11 +52,11 @@
     color: black;
     
 }
-.signin-google-OAuth{
+.signIn-google-OAuth{
     width: 100%;
     padding-bottom: 0.5rem;
 }
-.signin-google-OAuth-button{
+.signIn-google-OAuth-button{
     width: 80%;
     border-radius: 10rem;
     padding: 0.3rem 2rem;
@@ -68,12 +68,12 @@
     top: 0.35rem;
     left: 0.5rem;
 }
-.signin-apple-OAuth{
+.signIn-apple-OAuth{
     width: 100%;
     padding-bottom: 1rem;
 
 }
-.signin-apple-OAuth-button{
+.signIn-apple-OAuth-button{
     width: 80%;
     border-radius: 10rem;
     padding: 0.1rem 2rem;
@@ -86,7 +86,7 @@
     top: 0.26rem;
     left: 0.86rem;
 }
-.signin-create-account{
+.signIn-create-account{
     width: 100%;
     color: black;
     display: flex;
@@ -94,7 +94,7 @@
     align-items: center;
     margin-top: -0.7rem;
 }
-.signin-create-account-title{
+.signIn-create-account-title{
     margin-right: 0.5rem;
 }
 
