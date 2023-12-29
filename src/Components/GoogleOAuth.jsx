@@ -14,7 +14,7 @@ export function GoogleOAuth(){
         try {
             
           // Gets authentication url from backend server
-            const {data :{url}} = await axios.get(`${serverUrl}/auth/url`);
+            const {data :{url}} = await axios.get(`http://localhost:2000/auth/url`);
           // Navigate to consent screen
             window.location.assign(url);
         } catch (err) {

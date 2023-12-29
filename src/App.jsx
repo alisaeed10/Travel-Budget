@@ -5,6 +5,7 @@ import {CreateAccount} from './Pages/SignIn/CreateAccount/CreateAccount'
 import { useEffect, useRef, useState, createContext, useContext, useCallback } from 'react';
 import axios from 'axios';
 import './App.css'
+import { ForgotPassword } from './Pages/SignIn/ForgotPassword/ForgotPassword';
 
 // Ensures cookie is sent
 axios.defaults.withCredentials = true;
@@ -48,7 +49,7 @@ const Callback = () => {
         try {
           if (called.current) return; // prevent rerender caused by StrictMode
           called.current = true;
-          const res = await axios.get(`${serverUrl}/auth/token${window.location.search}`);
+          const res = await axios.get(`http://localhost:2000/auth/token${window.location.search}`);
           console.log('response: ', res);
           checkLoginState();
           navigate('/');
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
   {
     path: '/createAccount',
     element: <CreateAccount />,
+  },
+  {
+    path: '/forgotPassword',
+    element: <ForgotPassword />,
   },
 
 ]);
