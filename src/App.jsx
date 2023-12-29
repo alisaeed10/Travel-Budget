@@ -49,7 +49,7 @@ const Callback = () => {
         try {
           if (called.current) return; // prevent rerender caused by StrictMode
           called.current = true;
-          const res = await axios.get(`http://localhost:2000/auth/token${window.location.search}`);
+          const res = await axios.get(`${serverUrl}/auth/token${window.location.search}`);
           console.log('response: ', res);
           checkLoginState();
           navigate('/');
