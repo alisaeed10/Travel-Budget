@@ -1,0 +1,119 @@
+.signIn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    padding: 5% 5%;
+    border-radius: 2rem;
+}
+.signIn-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black; 
+    border-bottom: 2px solid black;
+}
+.signIn-inputs{
+    padding: 0.5rem 1rem;
+}
+.signIn-input{
+    width: 100%;
+    padding: 0.7rem 0.4rem;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: rgb(12, 12, 12);
+    background-color: rgb(249, 250, 249);
+}
+.error-checking{
+    color: red;
+    font-size: 0.8rem;
+    display: none;
+}
+.signIn-forgot-password-button{
+    text-decoration: underline;
+    font-size: 0.8rem;
+    position: relative;
+    right: 75%;
+    bottom: 0.7rem;
+}
+.signIn-button{
+    width: 100%;
+    padding-bottom: 2rem;
+    
+}
+.signIn-button-button{
+    width: 80%;
+    border-radius: 10rem;
+    padding: 0.8rem 5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    background-color: rgb(16, 165, 58);
+    color: black;
+    
+}
+.signIn-google-OAuth{
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+.signIn-google-OAuth-button{
+    width: 80%;
+    border-radius: 10rem;
+    padding: 0.3rem 2rem;
+    padding-bottom: 5%;
+}
+.googleLogo{
+    width: 1.5rem;
+    position: relative;
+    top: 0.35rem;
+    left: 0.5rem;
+}
+.signIn-apple-OAuth{
+    width: 100%;
+    padding-bottom: 1rem;
+
+}
+.signIn-apple-OAuth-button{
+    width: 80%;
+    border-radius: 10rem;
+    padding: 0.1rem 2rem;
+    padding-bottom: 5%;
+
+}
+.appleLogo{
+    width: 1.7rem;
+    position: relative;
+    top: 0.26rem;
+    left: 0.86rem;
+}
+.signIn-create-account{
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.7rem;
+}
+.signIn-create-account-title{
+    margin-right: 0.5rem;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
