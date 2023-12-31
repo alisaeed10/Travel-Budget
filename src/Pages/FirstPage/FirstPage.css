@@ -16,13 +16,10 @@ video {
 
 .content {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    top: 50%;
+    left: 8%;
+    text-align: left;
+    transform: translateY(-50%);
 }
 .content h1{
     font-size: 160px;
@@ -30,9 +27,10 @@ video {
     font-weight: 600;
     transition: 1s;
     -webkit-text-stroke: 2px #fff;
+    margin: 0;
+    padding: 0;
 }
 .content h1:hover{
-    /* -webkit-text-stroke: 2px #fff; */
     color: #fcfcfc;
 }
 .content a{
@@ -70,3 +68,13 @@ video {
     height: 100%;
     background-color: rgba(0,0,0,.6);
 }
+.button-container {
+    display: flex;
+} 
+button {
+    margin-right: 10px;
+}
+
+
+
+

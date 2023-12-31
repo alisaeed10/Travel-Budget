@@ -7,8 +7,8 @@ export function Welcome() {
             <div className="overlay"></div>
             <video src={videoBackground} autoPlay loop muted />
             <div className='content'>
-                <h1>Adventures Await</h1>
-                <button className='btn'>Start Here</button>
+                <h1>Adventures</h1>
+                <h1>Await</h1>
             </div>
         </div>
     );

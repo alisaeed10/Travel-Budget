@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Welcome } from './Pages/FirstPage/FirstPage'
 import {SignIn} from './Pages/SignIn/OAuthPage'
+import {Info} from './Pages/Info/InformationPage'
 
 import './App.css'
 
