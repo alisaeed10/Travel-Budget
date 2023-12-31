@@ -1,0 +1,143 @@
+.create-account-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s ease;
+    left: 30%;
+}
+.create-account-title{
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: black; 
+    border-bottom: 2px solid rgb(255, 255, 255);
+    
+    color: transparent;
+    font-weight: 600;
+    transition: 1s;
+    -webkit-text-stroke: 2px #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.create-account-title:hover{
+    color: #fcfcfc;
+}
+.create-account-inputs{
+    padding: 0.5rem 1rem;
+}
+.create-account-input{
+    width: 100%;
+    padding: 0.7rem 0.4%;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: rgb(12, 12, 12);
+    background-color: rgb(249, 250, 249);
+}
+.error-checking2{
+    color: red;
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 1rem;
+    display: none;
+}
+.error-name-checking{
+    color: red;
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 1rem;
+    display: none;
+}
+.create-account-inputs-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.create-account-input-name{
+
+    padding: 0.7rem 0.4%;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: rgb(12, 12, 12);
+    background-color: rgb(249, 250, 249);
+}
+
+.create-account-button-button{
+    width: 100%;
+    border-radius: 10rem;
+    padding: 0.8rem 5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    background-color: rgb(16, 165, 58);
+    color: black;
+}
+.create-account-sign-in{
+    width: 100%;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.7rem;
+    bottom: 200px;
+    position: absolute;
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Center the text horizontally */
+    text-align: center; /* Center the text inside the container */
+    left: 80%;
+}
+.create-account-sign-in-title{
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+
+
+
+.main {
+    margin: -0.5%;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+} 
+video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.btn{
+    border: 1px solid #ffffff;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+.btn:hover{
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+}
