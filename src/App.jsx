@@ -2,9 +2,10 @@ import { RouterProvider,createBrowserRouter, useNavigate } from 'react-router-do
 import { Welcome } from './Pages/FirstPage/FirstPage'
 import { SignIn } from './Pages/SignIn/SignIn'
 import {CreateAccount} from './Pages/SignIn/CreateAccount/CreateAccount'
+import { Nav } from '../src/Components/Nav'
 import { useEffect, useRef, useState, createContext, useContext, useCallback } from 'react';
 import axios from 'axios';
-import './App.css'
+import './index.css';
 import { ForgotPassword } from './Pages/SignIn/ForgotPassword/ForgotPassword';
 
 // Ensures cookie is sent
@@ -92,6 +93,7 @@ const router = createBrowserRouter([
 function App() {
  return (
    <div className="Apps">
+    <Nav />
      <AuthContextProvider>
           <RouterProvider router={router} />
       </AuthContextProvider>
