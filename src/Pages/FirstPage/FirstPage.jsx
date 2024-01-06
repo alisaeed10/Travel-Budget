@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import './FirstPage.css';
 import { SlideShow } from '../../Components/SlideShow';
-import { Nav } from '../../Components/Nav';
 
 
 export function Welcome() {
