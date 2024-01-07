@@ -9,13 +9,13 @@ export function SlideShow() {
     const [slideIndex3, setSlideIndex3] = useState(2);
 
     const slides = [  
-        {id: 1, title: "Santorini, Greece", content: ["../../../public/Greece/Santorini.png", "../../../public/Greece/Santorini2.png", "../../../public/Greece/santorini3.png", "../../../public/Greece/Santorini4.png" ]},
+        {id: 1, title: "Santorini, Greece", content: ["../../../Greece/Santorini.png", "../../../Greece/Santorini2.png", "../../../Greece/santorini3.png", "../../../Greece/Santorini4.png" ]},
 
-        {id: 2, title: "Istanbul, Turkey", content: ["../../../public/Istanbul/istanbul.png", "../../../public/Istanbul/istanbul2.png", "../../../public/Istanbul/istanbul3.png", "../../../public/Istanbul/istanbul4.png" ]},
+        {id: 2, title: "Istanbul, Turkey", content: ["../../../Istanbul/istanbul.png", "../../../Istanbul/istanbul2.png", "../../../Istanbul/istanbul3.png", "../../../Istanbul/istanbul4.png" ]},
 
-        { id: 3, title: "Tokyo, Japan", content: ["../../../public/Tokyo/tokyo1.png", "../../../public/Tokyo/tokyo2.png", "../../../public/Tokyo/tokyo3.png", "../../../public/Tokyo/tokyo4.png" ]}, 
+        { id: 3, title: "Tokyo, Japan", content: ["../../../Tokyo/tokyo1.png", "../../../Tokyo/tokyo2.png", "../../../Tokyo/tokyo3.png", "../../../Tokyo/tokyo4.png" ]}, 
 
-        {id: 4, title: "Venice, Italy", content: ["../../../public/italy/Vince-Italy.png", "../../../public/italy/Veince2.png"]},
+        {id: 4, title: "Venice, Italy", content: ["../../../italy/Vince-Italy.png", "../../../italy/Veince2.png"]},
     ];
     useEffect(() => {
         const interval = setInterval(() => {
