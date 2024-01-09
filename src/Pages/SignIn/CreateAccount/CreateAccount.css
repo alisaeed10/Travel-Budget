@@ -1,23 +1,29 @@
+.create-account{
+    position: absolute;
+    top: 20%;
+    width: 95%;
+    margin-left: 2.5%;
+}
 .create-account-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid black;
-    padding: 5% 5%;
+    border: 5px solid rgb(252, 248, 248);
     border-radius: 2rem;
 }
 .create-account-title{
     font-size: 2.5rem;
     font-weight: 700;
-    color: black; 
-    border-bottom: 2px solid black;
+    color: rgb(251, 251, 251); 
+    border-bottom: 2px solid rgb(243, 243, 243);
+    text-shadow: 1px 1px 3px #e9e5e5;
 }
 .create-account-inputs{
-    padding: 0.5rem 1rem;
+    padding: 0.5% 1%;
 }
 .create-account-input{
-    width: 100%;
+    width: 95%;
     padding: 0.7rem 0.4%;
     margin-top: 1rem;
     border: 2px solid black;
@@ -31,6 +37,7 @@
     position: relative;
     bottom: 1rem;
     display: none;
+    text-align: center;
 }
 .error-name-checking{
     color: red;
@@ -38,12 +45,13 @@
     position: relative;
     bottom: 1rem;
     display: none;
+    text-align: center;
 }
 .create-account-inputs-name{
     display: flex;
+    width: 96.5%;
     justify-content: space-between;
     align-items: center;
-
 }
 .create-account-input-name{
 
@@ -53,9 +61,11 @@
     color: rgb(12, 12, 12);
     background-color: rgb(249, 250, 249);
 }
+.create-account-button{
+    padding-bottom: 3%;
 
+}
 .create-account-button-button{
-    width: 100%;
     border-radius: 10rem;
     padding: 0.8rem 5rem;
     margin-top: 1rem;
@@ -65,7 +75,7 @@
 }
 .create-account-sign-in{
     width: 100%;
-    color: black;
+    color: rgb(237, 237, 237);
     display: flex;
     justify-content: center;
     align-items: center;
