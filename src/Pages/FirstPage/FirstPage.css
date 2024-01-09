@@ -106,3 +106,8 @@
     display: flex;
     align-items: center;
 }
+.signin-link{
+    font-weight: bold;
+    border-bottom: 2px solid;
+    margin-right: 2rem;
+}
