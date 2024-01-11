@@ -1,10 +1,10 @@
-import { RouterProvider,createBrowserRouter, useNavigate } from 'react-router-dom'
-import { Welcome } from './Pages/FirstPage/FirstPage'
-import { SignIn } from './Pages/SignIn/SignIn'
-import {CreateAccount} from './Pages/SignIn/CreateAccount/CreateAccount'
+import { RouterProvider,createBrowserRouter, useNavigate } from 'react-router-dom';
+import { Welcome } from './Pages/FirstPage/FirstPage';
+import { SignIn } from './Pages/SignIn/SignIn';
+import {CreateAccount} from './Pages/SignIn/CreateAccount/CreateAccount';
 import { useEffect, useRef, useState, createContext, useContext, useCallback } from 'react';
 import axios from 'axios';
-import './App.css'
+import './index.css';
 import { ForgotPassword } from './Pages/SignIn/ForgotPassword/ForgotPassword';
 
 // Ensures cookie is sent
@@ -98,6 +98,4 @@ function App() {
    </div>
  )
 }
-
-
-export default App
+export default App;

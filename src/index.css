@@ -6,15 +6,15 @@
   color-scheme: light dark;
   color: rgba(33, 32, 32, 0.87);
   /* background-color: #242424; */
-  background-color: #fafafa;
-  /* background-image: url('../../../public/background1.png');
-  background-size: 100% 100%; */
-  background-image: linear-gradient(to bottom right, rgba(0, 229, 255, 0.734), rgb(255, 255, 252));
+  background-color: #0b0a0a;
+  /* background-image: url('../../../public/background1.png');*/
+  background-size: 100% 100%; 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 a {
@@ -28,10 +28,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
+  position: relative;
 }
 
 h1 {
