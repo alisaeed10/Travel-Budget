@@ -2,11 +2,18 @@ import './signIn.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { isValidEmail, isValidPassword } from '../../utils/Validation';
 import { GoogleOAuth } from '../../Components/GoogleOAuth';
+import { useEffect } from 'react';
+import { Nav } from '../../Components/Nav';
+import { changeOfPath } from '../../utils/Validation';
 
 
 export function SignIn() {
     const navigate = useNavigate();
     // this will handle the sign in of the account and will also handle any errors that may occur
+    useEffect(() => {
+        const path = window.location.pathname;
+        changeOfPath(path);
+    }, []);
     const handleSignIn = () => {
         const message = document.querySelector('.signIn-inputs').children[0];
         const email = document.querySelector('.signIn-inputs').children[1];
@@ -46,6 +53,7 @@ export function SignIn() {
     
     return (
         <div className='signIn'>
+            <Nav/>
             <div className='signIn-container'>
             <p className='signIn-title'>Login In</p>
             <div className='signIn-inputs'>
