@@ -55,21 +55,21 @@ export function SignIn() {
         <div className='signIn'>
             <Nav/>
             <div className='signIn-container'>
-            <p className='signIn-title'>Login In</p>
-            <div className='signIn-inputs'>
-                <p className='error-checking'>Invalid Email or Password</p>
-                <input className='signIn-input' type='text' placeholder='Email' pattern='[^\s@]+@[^\s@]+\.[^\s@]'/>
-                <input className='signIn-input' type='password' placeholder='Password' pattern='[a-zA-Z#$%0-9]'/>
-             </div>  
-             <div className='signIn-forgot-password'>
+                <p className='signIn-title'>Login In</p>
+                <div className='signIn-inputs'>
+                    <p className='error-checking'>Invalid Email or Password</p>
+                    <input className='signIn-input' type='text' placeholder='Email' pattern='[^\s@]+@[^\s@]+\.[^\s@]'/>
+                    <input className='signIn-input' type='password' placeholder='Password' pattern='[a-zA-Z#$%0-9]'/>
+                </div>  
+                <div className='signIn-forgot-password'>
                     <Link className='signIn-forgot-password-button' to='/forgotPassword'>Forgot Password?</Link>
-            </div> 
-             <div className='signIn-button'>
-                <button className='signIn-button-button' onClick={() => handleSignIn()}>Sign In</button>
-            </div>
-             <div className='signIn-google-OAuth'>
-                <GoogleOAuth  />
-            </div>
+                </div> 
+                <div className='signIn-button'>
+                    <button className='signIn-button-button' onClick={() => handleSignIn()}>Sign In</button>
+                </div>
+                <div className='signIn-google-OAuth'>
+                    <GoogleOAuth  />
+                </div>
             </div>
             <div className='signIn-create-account'>
                 <p className='signIn-create-account-title'>Dont have an account?</p>

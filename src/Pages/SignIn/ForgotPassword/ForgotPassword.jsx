@@ -7,7 +7,7 @@ import { changeOfPath } from '../../../utils/Validation';
 import { useEffect } from 'react';
 
 
-export function ForgotPassword(){
+function ForgotPassword(){
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -59,3 +59,4 @@ export function ForgotPassword(){
         </div>
     )
 }
+export default ForgotPassword;
