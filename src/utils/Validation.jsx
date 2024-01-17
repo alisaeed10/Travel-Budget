@@ -7,4 +7,10 @@ function isValidPassword(password) {
     }
     return false;
 }
-export { isValidEmail, isValidPassword };
+function changeOfPath(path){
+    if(path !== '/'){
+        document.querySelector('.signin-link').href = '/';
+        document.querySelector('.signin-link').innerHTML = 'Home';
+    }
+}
+export { isValidEmail, isValidPassword, changeOfPath };

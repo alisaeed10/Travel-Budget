@@ -2,6 +2,9 @@
 import { Link } from 'react-router-dom';
 import './CreateAccount.css';
 import { isValidEmail, isValidPassword } from '../../../utils/Validation';
+import { Nav } from '../../../Components/Nav';
+import { useEffect } from 'react';
+import { changeOfPath } from '../../../utils/Validation'
 
 function isValidName(name){ 
     
@@ -12,6 +15,10 @@ export function CreateAccount() {
 
 
     // this will handle the creation of the account and will also handle any errors that may occur
+    useEffect(() => {
+        const path = window.location.pathname;
+        changeOfPath(path);
+    }, []);
     const handleAccount = () => {
         const firstName = document.querySelector('.create-account-inputs-name').children[0];
         const lastName = document.querySelector('.create-account-inputs-name').children[1];
@@ -99,6 +106,7 @@ export function CreateAccount() {
 
     return (
         <div className='create-account'>
+            <Nav/>
             <div className='create-account-container'>
             <p className='create-account-title'>Create Account</p>
             <div className='create-account-inputs'>

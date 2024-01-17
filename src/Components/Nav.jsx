@@ -1,6 +1,16 @@
 import '../Pages/FirstPage/FirstPage.css';
+import { useEffect } from 'react';
 
 export function Nav(){
+    // if user is not in the home page then nave bar will change the link from sign in to home
+    const path = window.location.pathname;
+    console.log(path);
+    useEffect(() => {
+        if(path !== '/'){
+            document.querySelector('.signin-link').href = '/';
+            document.querySelector('.signin-link').innerHTML = 'Home';
+        }
+    }, [path]);
     return(
         <div className='NavBar'>
             <div className="logo">
