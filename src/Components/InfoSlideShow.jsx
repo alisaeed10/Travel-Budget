@@ -13,30 +13,27 @@ export function InfoSlideShow({slideNumber}){
     // const [timeFrame, setTimeFrame] = useState('');
 
     console.log(slideNumber);
-        const update = () => {
-            const title = document.querySelector('.info-input-title');
-            if (slideNumber === 0) {
-                title.innerHTML = 'Where would you like to go?';
-                return <LocationSlide/>;
-            } else if (slideNumber === 1) {
-                title.innerHTML = 'Whats the Maximum spending limit?';
-                
-                return <BudgetSlide/>;
-            } else if (slideNumber === 2) {
-                title.innerHTML = 'How many people would like to come?';
-                return <NumPeopleSlides/>;
-                
-            } else if (slideNumber === 3) {
-                title.innerHTML = 'How long would you like to stay?';
-                return <NumDaysSlide />;
-            }
+    const getTitle = () => {
+        if (slideNumber === 0) {
+            return 'Where would you like to go?';
+        } else if (slideNumber === 1) {
+            return 'What\'s the maximum spending limit?';
+        } else if (slideNumber === 2) {
+            return 'How many people would like to come?';
+        } else if (slideNumber === 3) {
+            return 'How long would you like to stay?';
         }
+        return 'Title'; // Default title if slideNumber is not matched
+    };
     return (
         <>
         
-            <p className='info-input-title'>Title</p>
+            <p className='info-input-title'>{getTitle()}</p>
             <div className='info-input-container'>
-                {update()}
+                {slideNumber === 0 && <LocationSlide />}
+                {slideNumber === 1 && <BudgetSlide />}
+                {slideNumber === 2 && <NumPeopleSlides />}
+                {slideNumber === 3 && <NumDaysSlide />}
             </div>
         </>
     );
