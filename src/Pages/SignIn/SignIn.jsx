@@ -5,10 +5,13 @@ import { GoogleOAuth } from '../../Components/GoogleOAuth';
 import { useEffect } from 'react';
 import { Nav } from '../../Components/Nav';
 import { changeOfPath } from '../../utils/Validation';
+import { useState } from 'react';
 
 
 export function SignIn() {
     const navigate = useNavigate();
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setUserPassword] = useState('');
     // this will handle the sign in of the account and will also handle any errors that may occur
     useEffect(() => {
         const path = window.location.pathname;
@@ -23,6 +26,21 @@ export function SignIn() {
             message.style.display = 'none';
             email.style.border = '2px solid black';
             password.style.border = '2px solid black';
+            setUserEmail(email.value);
+            setUserPassword(password.value);
+            const  fetchSignIn = async () => {
+                try{
+                    const res = await fetch('http://localhost:8000/signin',{
+                        method: 'GET'
+                    });
+                    const data = await res.json();
+                    console.log(data);
+                }catch(err){    
+                    console.log("Error getting email: ", err);
+                }
+            }
+            fetchSignIn();
+
             navigate('/');
         } 
         else if (!isValidEmail(email.value) && (isValidPassword(password.value))) {
@@ -48,7 +66,6 @@ export function SignIn() {
             }, 600);
 
         }
-        
     }
     
     return (
