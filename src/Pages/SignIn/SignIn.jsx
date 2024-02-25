@@ -7,7 +7,7 @@ import { Nav } from '../../Components/Nav';
 import { changeOfPath } from '../../utils/Validation';
 import { useState } from 'react';
 
-
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 export function SignIn() {
     const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState('');
@@ -28,9 +28,10 @@ export function SignIn() {
             password.style.border = '2px solid black';
             setUserEmail(email.value);
             setUserPassword(password.value);
+
             const  fetchSignIn = async () => {
                 try{
-                    const res = await fetch('http://localhost:8000/signin',{
+                    const res = await fetch(`${serverUrl}/login?email=${email.value}&password=${password.value}`,{
                         method: 'GET'
                     });
                     const data = await res.json();

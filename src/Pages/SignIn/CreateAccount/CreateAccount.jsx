@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import './CreateAccount.css';
 import { isValidEmail, isValidPassword } from '../../../utils/Validation';
 import { Nav } from '../../../Components/Nav';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { changeOfPath } from '../../../utils/Validation'
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 
 function isValidName(name){ 
     
@@ -12,19 +14,43 @@ function isValidName(name){
 }
 
 export function CreateAccount() {
+    const [id, setId] = useState(0);
+    const createAccount = async (name, email, password, confirmPassword) => {
+        console.log(name, email, password, confirmPassword);
 
+        const res = await fetch(`${serverUrl}/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: password,
+                confirm_password: confirmPassword
+            })
+        })
+        const status = await res.json();
+        console.log(status);
+        // console.log(status.message)
+    }
 
     // this will handle the creation of the account and will also handle any errors that may occur
     useEffect(() => {
+        // used to update the top left button to the current page
         const path = window.location.pathname;
         changeOfPath(path);
     }, []);
+
+    // function to handle the creation of the account
     const handleAccount = () => {
+        // getting all the html tags to check if the user has entered the correct information
         const firstName = document.querySelector('.create-account-inputs-name').children[0];
         const lastName = document.querySelector('.create-account-inputs-name').children[1];
         const email = document.querySelector('.create-account-inputs').children[3];
         const password = document.querySelector('.create-account-inputs').children[4];
         const confirmPassword = document.querySelector('.create-account-inputs').children[5];
+        // if user doesn't display a name then an error is displayed
         if(firstName.value.length === 0){
             document.querySelector('.error-name-checking').style.display = 'block';
             firstName.style.border = '2px solid red';
@@ -33,6 +59,7 @@ export function CreateAccount() {
                 firstName.style.animation = '';
             }, 600);
         }
+        //if user doesn't enter a vaild name then an error is displayed
         else if(!isValidName(firstName.value) && !isValidName(lastName.value)){
             document.querySelector('.error-name-checking').style.display = 'block';
             firstName.style.border = '2px solid red';
@@ -46,6 +73,7 @@ export function CreateAccount() {
             lastName.value = '';
             firstName.value = '';
         }
+        // if user doesn't enter a firstname but enters a last name then error occurs
         else if(!isValidName(firstName.value) && (isValidName(lastName.value))){
             document.querySelector('.error-name-checking').style.display = 'block';
             firstName.style.border = '2px solid red';
@@ -56,6 +84,7 @@ export function CreateAccount() {
             lastName.style.border = '2px solid black';
             firstName.value = '';
         }
+        // if user doesn't enter a last name but enters a first name then error occurs
         else if((!isValidName(lastName.value)) && isValidName(firstName.value) ){
             document.querySelector('.error-name-checking').style.display = 'block';
             lastName.style.border = '2px solid red';
@@ -66,6 +95,7 @@ export function CreateAccount() {
             }, 600);
             firstName.style.border = '2px solid black';
         }
+        // if the password entered is not valid or the confirmed password doesn't match the password then an error occurs
         else if(!isValidPassword(password.value) || password.value !== confirmPassword.value){
             document.querySelector('.error-checking2').style.display = 'block';
             password.style.border = '2px solid red';
@@ -79,6 +109,7 @@ export function CreateAccount() {
             password.value = '';
             confirmPassword.value = '';
         }
+        // if the email entered is not valid then an error occurs
         else if(!isValidEmail(email.value)){
             document.querySelector('.error-checking2').style.display = 'block';
             email.style.border = '2px solid red';
@@ -92,6 +123,7 @@ export function CreateAccount() {
             password.style.border = '2px solid black';
             confirmPassword.style.border = '2px solid black';
         }
+        // if all the information entered is valid then the account is created
         else{
             document.querySelector('.error-checking2').style.display = 'none';
             document.querySelector('.error-name-checking').style.display = 'none';
@@ -100,6 +132,12 @@ export function CreateAccount() {
             email.style.border = '2px solid black';
             password.style.border = '2px solid black';
             confirmPassword.style.border = '2px solid black';
+            
+            // making a Post request to the server to create the account
+            createAccount(firstName.value + ' ' + lastName.value, email.value, password.value, confirmPassword.value)
+            setId(() => {
+                return id + 1;
+            })
         }
         
     }
