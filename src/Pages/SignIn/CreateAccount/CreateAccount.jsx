@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './CreateAccount.css';
 import { isValidEmail, isValidPassword } from '../../../utils/Validation';
 import { Nav } from '../../../Components/Nav';
@@ -9,13 +9,11 @@ const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 
 function isValidName(name){ 
-    
     return /^[a-zA-Z]+$/.test(name) || name === '';
 }
 
-export function CreateAccount() {
-    const [id, setId] = useState(0);
-    const createAccount = async (name, email, password, confirmPassword) => {
+const createAccount = async (name, email, password, confirmPassword) => {
+    try {
         console.log(name, email, password, confirmPassword);
 
         const res = await fetch(`${serverUrl}/create`, {
@@ -32,8 +30,18 @@ export function CreateAccount() {
         })
         const status = await res.json();
         console.log(status);
-        // console.log(status.message)
+        return status.message;
     }
+    catch (err) {
+        return err;
+    }
+    
+    // console.log(status.message)
+}
+
+export function CreateAccount() {
+    const navigate = useNavigate();
+    const [id, setId] = useState(0);
 
     // this will handle the creation of the account and will also handle any errors that may occur
     useEffect(() => {
@@ -132,12 +140,34 @@ export function CreateAccount() {
             email.style.border = '2px solid black';
             password.style.border = '2px solid black';
             confirmPassword.style.border = '2px solid black';
+
             
             // making a Post request to the server to create the account
-            createAccount(firstName.value + ' ' + lastName.value, email.value, password.value, confirmPassword.value)
-            setId(() => {
-                return id + 1;
-            })
+            const reponse = async () => {
+                const message = await createAccount(firstName.value + ' ' + lastName.value, email.value, password.value, confirmPassword.value)
+                if (message === 'Email already exists') {
+                    document.querySelector('.error-checking2').style.display = 'block';
+                    document.querySelector('.error-checking2').innerHTML = message;
+                    email.style.border = '2px solid red';
+                    email.style.animation = 'shake 0.5s';
+                    password.style.border = '2px solid red';
+                    confirmPassword.style.border = '2px solid red';
+                    password.style.animation = 'shake 0.5s';
+                    confirmPassword.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        email.style.animation = '';
+                        password.style.animation = '';
+                        confirmPassword.style.animation = '';
+                    }, 600);
+                    email.value = '';
+                    password.value = '';
+                    confirmPassword.value = '';
+                }
+                else {
+                    navigate('/');
+                }
+            }
+            reponse();
         }
         
     }

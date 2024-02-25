@@ -39,6 +39,14 @@
     display: none;
     text-align: center;
 }
+.error-checking3{
+    color: red;
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 1rem;
+    display: none;
+    text-align: center;
+}
 .error-name-checking{
     color: red;
     font-size: 0.8rem;

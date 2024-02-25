@@ -8,41 +8,57 @@ import { changeOfPath } from '../../utils/Validation';
 import { useState } from 'react';
 
 const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 export function SignIn() {
     const navigate = useNavigate();
-    const [userEmail, setUserEmail] = useState('');
+    const [userEmail, setUserEmail] =  ('');
     const [userPassword, setUserPassword] = useState('');
+
     // this will handle the sign in of the account and will also handle any errors that may occur
     useEffect(() => {
         const path = window.location.pathname;
         changeOfPath(path);
     }, []);
+
     const handleSignIn = () => {
         const message = document.querySelector('.signIn-inputs').children[0];
         const email = document.querySelector('.signIn-inputs').children[1];
         const password = document.querySelector('.signIn-inputs').children[2];
-        
+        var status ="";
         if (isValidEmail(email.value) && (isValidPassword(password.value))) {
             message.style.display = 'none';
             email.style.border = '2px solid black';
             password.style.border = '2px solid black';
-            setUserEmail(email.value);
-            setUserPassword(password.value);
+            // setUserEmail(email.value);
+            // setUserPassword(password.value);
 
             const  fetchSignIn = async () => {
-                try{
-                    const res = await fetch(`${serverUrl}/login?email=${email.value}&password=${password.value}`,{
+                try {
+                    const passwordEncoded = encodeURIComponent(password.value);
+                    const res = await fetch(`${serverUrl}/login?email=${email.value}&password=${passwordEncoded}`,{
                         method: 'GET'
                     });
                     const data = await res.json();
-                    console.log(data);
+                    if (data.user === 'User Not Found') {
+                        message.style.display = 'block';
+                        message.innerHTML = 'User Not Found';
+                        email.style.border = '2px solid red';
+                        password.style.border = '2px solid red';
+                        password.style.animation = 'shake 0.5s';
+                        email.style.animation = 'shake 0.5s';
+                        setTimeout(() => {
+                            email.style.animation = '';
+                            password.style.animation = '';
+                        }, 600);
+                    }
+                    else {
+                        navigate('/');
+                    }
                 }catch(err){    
                     console.log("Error getting email: ", err);
                 }
             }
             fetchSignIn();
-
-            navigate('/');
         } 
         else if (!isValidEmail(email.value) && (isValidPassword(password.value))) {
             message.style.display = 'block';
@@ -80,7 +96,7 @@ export function SignIn() {
                     <input className='signIn-input' type='password' placeholder='Password' pattern='[a-zA-Z#$%0-9]'/>
                 </div>  
                 <div className='signIn-forgot-password'>
-                    <Link className='signIn-forgot-password-button' to='/forgotPassword'>Forgot Password?</Link>
+                    {/* <Link className='signIn-forgot-password-button' to='/forgotPassword'>Forgot Password?</Link> */}
                 </div> 
                 <div className='signIn-button'>
                     <button className='signIn-button-button' onClick={() => handleSignIn()}>Sign In</button>
