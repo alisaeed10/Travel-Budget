@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './CreateAccount.css';
 import { isValidEmail, isValidPassword } from '../../../utils/Validation';
 import { Nav } from '../../../Components/Nav';
-import { useEffect,useState } from 'react';
+import { useEffect } from 'react';
 import { changeOfPath } from '../../../utils/Validation'
 const serverUrl = import.meta.env.VITE_SERVER_URL;
 
@@ -41,7 +41,6 @@ const createAccount = async (name, email, password, confirmPassword) => {
 
 export function CreateAccount() {
     const navigate = useNavigate();
-    const [id, setId] = useState(0);
 
     // this will handle the creation of the account and will also handle any errors that may occur
     useEffect(() => {

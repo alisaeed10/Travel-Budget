@@ -2,35 +2,35 @@ import './signIn.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { isValidEmail, isValidPassword } from '../../utils/Validation';
 import { GoogleOAuth } from '../../Components/GoogleOAuth';
-import { useEffect } from 'react';
+import { setUser } from '../../utils/UserInformation';
+// import { useEffect } from 'react';
 import { Nav } from '../../Components/Nav';
-import { changeOfPath } from '../../utils/Validation';
-import { useState } from 'react';
+// import { changeOfPath } from '../../utils/Validation';
+// import { useState } from 'react';
 
 const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 export function SignIn() {
     const navigate = useNavigate();
-    const [userEmail, setUserEmail] =  ('');
-    const [userPassword, setUserPassword] = useState('');
+    // const [userEmail, setUserEmail] = useState('');
+    // const [userName, setUserName] = useState('');
 
-    // this will handle the sign in of the account and will also handle any errors that may occur
-    useEffect(() => {
-        const path = window.location.pathname;
-        changeOfPath(path);
-    }, []);
+    // // this will handle the sign in of the account and will also handle any errors that may occur
+    // useEffect(() => {
+    //     const path = window.location.pathname;
+    //     changeOfPath(path);
+    // }, []);
 
     const handleSignIn = () => {
         const message = document.querySelector('.signIn-inputs').children[0];
         const email = document.querySelector('.signIn-inputs').children[1];
         const password = document.querySelector('.signIn-inputs').children[2];
-        var status ="";
+        
         if (isValidEmail(email.value) && (isValidPassword(password.value))) {
             message.style.display = 'none';
             email.style.border = '2px solid black';
             password.style.border = '2px solid black';
             // setUserEmail(email.value);
-            // setUserPassword(password.value);
 
             const  fetchSignIn = async () => {
                 try {
@@ -52,6 +52,8 @@ export function SignIn() {
                         }, 600);
                     }
                     else {
+                        console.log(data.user);
+                        setUser(data.user["name"], data.user["email"]);
                         navigate('/');
                     }
                 }catch(err){    
