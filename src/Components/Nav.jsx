@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import "../Pages/FirstPage/FirstPage.css";
 import { useEffect } from "react";
-import { ProfileMenu } from "./ProfileMenu";
 import { getUser } from "../utils/UserInformation";
+import { Menu } from "./Menu";
 
 export function Nav() {
   // if user is not in the home page then nav bar will change the link from sign in to home
@@ -32,7 +32,7 @@ export function Nav() {
     } else if (name !== undefined && email !== undefined) {
       document.querySelector(".signin-link").style.display = "none";
     }
-  }, [name, email]);
+  }, [name, email, path]);
 
   return (
     <div className="NavBar">
@@ -44,7 +44,7 @@ export function Nav() {
         <a className="signin-link" href="/signin">
           Sign In
         </a>
-        {name !== "" && <ProfileMenu />}
+        {name !== "" && <Menu />}
       </div>
     </div>
   );

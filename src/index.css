@@ -8,19 +8,23 @@
   /* background-color: #242424; */
   background-color: #0b0a0a;
   /* background-image: url('../../../public/background1.png');*/
-  background-size: 100% 100%; 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  --border-radius: 8px;
+  --speed: 500ms;
+  --primary-bg: #242526;
+  --secondary-bg: #fff;
+  --primary-text-color: #555;
+  --secondary-text-color: #cecece;
 }
 
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 a:hover {
   color: #535bf2;
@@ -54,6 +58,10 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+ul{
+  list-style-type: none;
+
 }
 
 @media (prefers-color-scheme: light) {

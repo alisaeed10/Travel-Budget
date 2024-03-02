@@ -50,9 +50,6 @@
     bottom: 25%;
     padding: 1.0rem;
 }
-.info-input-container{
-
-}
 .info-buttons{
     display: flex;
     flex-direction: row;

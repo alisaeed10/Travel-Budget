@@ -11,7 +11,7 @@ export function TripInformation() {
   const nextSlide = () => {
     setSlideNumber(() => {
       if (slideNumber === 3) {
-        return 0;
+        return 3;
       } else {
         return slideNumber + 1;
       }
@@ -21,7 +21,7 @@ export function TripInformation() {
   const prevSlide = () => {
     setSlideNumber(() => {
       if (slideNumber === 0) {
-        return 3;
+        return 0;
       } else return slideNumber - 1;
     });
   };
