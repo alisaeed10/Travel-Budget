@@ -1,0 +1,110 @@
+.signIn{
+    position: absolute;
+    top: 20%;
+    width: 80%;
+    margin-left: 10%;
+}
+.signIn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(253, 252, 252);
+    border-radius: 2rem;
+    width: 100%;
+}
+.signIn-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(249, 245, 245); 
+    border-bottom: 2px solid rgb(248, 244, 244);
+    text-shadow: 2px 2px 4px #e9e5e5;
+}
+.signIn-inputs{
+    padding: 0.5rem 1rem;
+}
+.signIn-input{
+    width: 95%;
+    padding: 0.7rem 0.4rem;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: rgb(12, 12, 12);
+    background-color: rgb(249, 250, 249);
+}
+.error-checking{
+    color: red;
+    font-size: 0.8rem;
+    display: none;
+    text-align: center;
+}
+.signIn-forgot-password{
+    position: relative;
+    right: 11.5px;
+    margin-top: -0.3rem;
+    margin-bottom: 1rem;
+}
+.signIn-forgot-password-button{
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+.signIn-button{
+    padding-bottom: 2%;
+    
+}
+.signIn-button-button{
+    border-radius: 10rem;
+    padding: 0.8rem 5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    background-color: rgb(16, 165, 58);
+    color: black;
+    
+}
+.signIn-google-OAuth{
+    padding-bottom: 4%;
+}
+.signIn-google-OAuth-button{
+    background-color: black;
+    border-radius: 10rem;
+    padding: 0.3rem 1.5rem;
+    padding-bottom: 5%;
+}
+.googleLogo{
+    width: 1.5rem;
+    position: relative;
+    top: 0.35rem;
+    left: 0.5rem;
+}
+
+.signIn-create-account{
+    width: 100%;
+    color: rgb(251, 251, 251);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.7rem;
+}
+.signIn-create-account-title{
+    margin-right: 0.5rem;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }

@@ -1,0 +1,231 @@
+.Welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #f8f7f7;
+    position: absolute;
+    width: 100%;
+    margin-top: 3rem;
+}
+.Welcome-header{
+    text-align: center;
+    position: absolute;
+    top: 0rem;
+    width: 90%;
+    
+}
+.Welcome-title{
+    text-shadow: 1px 1px 3px #e9e5e5;
+    font-size: 50px;
+}
+.Welcome-bio{
+    color: #000000;
+    font-size: 25px;
+}
+.Welcome-content{
+    padding-top: 3rem;
+    display: flex;
+    position: absolute;
+    top: 17rem;
+    width: 80%;
+    color: #fff6f6;
+    justify-content: space-evenly;
+}
+.Welcome-footer{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    position: absolute;
+    top: 52rem;
+    gap:0.2rem;
+    cursor: pointer;
+    padding-bottom: 5rem;
+}
+.Welcome-footer-text{
+    font-size: 40px;
+    text-align: center;
+    color: #f8f7f7;
+    margin:0%;
+}
+.plane{
+    transform: rotate(90deg);
+}
+
+/* ------------- Slideshow CSS ------------- */
+.previousSlide{
+    width: 80%;
+    height: 70%;
+    border-radius: 2rem;
+}
+.currentSlide{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    border-bottom: 2px solid #000000;
+    transition: all 1s ease-in-out;
+}
+.nextSlide{
+
+    width: 80%;
+    height: 70%;
+    border-radius: 2rem;
+    border-bottom: 2px solid #000000;
+}
+.currentImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    border: 2px solid #000000;
+}
+.previousImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    border: 2px solid #000000;
+}
+.nextImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    border: 2px solid #000000;
+}
+.slideshow-Slides{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    height: 25rem;
+    text-align: center;
+    gap: 2rem;
+}
+
+/* ------------- Nav CSS ------------- */
+.NavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navbar-logo{
+    width: 5rem;
+    height: 5rem;
+}
+.navbar-tag{
+    text-shadow: 0.5px 0.5px 1.5px #e9e5e5;
+    font-weight: bold;
+    color: #e9e5e5;
+    border-bottom: 2px solid #e9e5e5;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+.signin-link{
+    font-weight: bold;
+    border-bottom: 2px solid;
+    margin-right: 2rem;
+}
+
+/* ------------- ProfileMenu CSS ------------- */
+.profile{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    position:relative;
+    top:0.2rem;
+    cursor: pointer;
+    color: white;
+}
+.userName{
+    font-size: 15px;
+    position:relative;
+    top:0.58rem;
+}
+
+/* ------------- DropDown CSS ------------- */
+.menu-trigger{
+    overflow: hidden;
+}
+.dropdown-menu{
+    /* display: flex;
+    flex-direction: column; */
+    position: absolute;
+    top: 73px;
+    right: 0px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 0px 0px;
+    padding-right: 15px;
+    width: 200px;
+    z-index: 1;
+}
+.dropdown-menu::before{
+    content: " ";
+    position: absolute  ;
+    top: -5px;
+    right: 20px;    
+    height: 20px;
+    width: 20px;
+    background: var(--secondary-bg);
+    transform: rotate(45deg);
+}
+.dropdown-menu.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+}
+.dropdown-menu.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--speed) ease;
+}
+h3{
+    width: 100%;
+    text-align:center;
+    font-size: 10px;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    line-height: 1.3rem;
+}
+h3 span{
+    font-size: 14px;
+    color: var(--secondary-text);
+    font-weight:500;
+}
+.dropdown-menu ul li{
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.dropdown-menu ul li:hover a{
+    color: rgb(212, 33, 9);
+    cursor: pointer;
+}
+.dropdown-menu ul li:hover img{
+    opacity: 1;
+    cursor: pointer;
+}
+.dropdownItem{
+   display: flex;
+   margin: 10px auto;
+}
+.dropdownItem img{
+    max-width: 25px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: var(--speed);
+}
+.item-link{
+    margin-left: 10px;
+    transition: var(--speed);
+    color: var(--primary-text-color);;
+}
