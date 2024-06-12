@@ -47,7 +47,6 @@
   color: rgb(229, 227, 227);
   text-shadow: 2px 2px 4px #e9e5e5;
   text-align: center;
-
 }
 .info-buttons {
   display: flex;
@@ -75,13 +74,13 @@
 }
 
 /* ----------------- dropdown ----------------- */
-.info-slide-location{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    transform: translateY(-100px);
+.info-slide-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translateY(-100px);
 }
 .searchbar-location-container {
   display: flex;
@@ -150,4 +149,22 @@
 ::-webkit-scrollbar-thumb {
   background-color: #ccc;
   border-radius: 20px;
+}
+
+/* ----------------- budget page ----------------- */
+
+.budget {
+  position: relative;
+  bottom: 2.3rem;
+  box-shadow: 2px 2px 8px #ddd;
+  border-radius: 0.5rem;
+}
+.number-budget {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ddd;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  box-shadow: 2px 2px 8px #ddd;
+  color: #666;
 }
