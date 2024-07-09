@@ -6,11 +6,8 @@ import { NumDaysSlide } from "./infoSlides/NumDaysSlide.jsx";
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-export function InfoSlideShow({ slideNumber }) {
-  // const [location, setLocation] = useState('');
-  const [budget, setBudget] = useState("");
-  // const [people, setPeople] = useState(0);
-  // const [timeFrame, setTimeFrame] = useState('');
+export function InfoSlideShow({ slideNumber, setBudget, setPeople, setTimeFrame}) {
+  
 
   console.log(slideNumber);
   const getTitle = () => {
@@ -30,9 +27,9 @@ export function InfoSlideShow({ slideNumber }) {
       <p className="info-input-title">{getTitle()}</p>
       <div className="info-input-container">
         {slideNumber === 0 && <LocationSlide />}
-              {slideNumber === 1 && <BudgetSlide budget={budget}  setBudget={setBudget} />}
-        {slideNumber === 2 && <NumPeopleSlides />}
-        {slideNumber === 3 && <NumDaysSlide />}
+        {slideNumber === 1 && <BudgetSlide setBudget={setBudget} />}
+        {slideNumber === 2 && <NumPeopleSlides setPeople={setPeople} />}
+        {slideNumber === 3 && <NumDaysSlide setTimeFrame={setTimeFrame} />}
       </div>
     </>
   );
