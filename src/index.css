@@ -5,9 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(33, 32, 32, 0.87);
-  /* background-color: #242424; */
-  background-color: #0b0a0a;
-  /* background-image: url('../../../public/background1.png');*/
+  background-color: #242424;
+  background-image: url('../../../public/sky.png');
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +22,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #f0f0f3;
   text-decoration: none;
 }
 a:hover {
